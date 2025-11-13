@@ -31,3 +31,34 @@ Star schema + semantic relationships; MERGE-based upserts for dimensions, append
 - **Power BI** (Semantic model + report)
 
 ## 📂 Project Structure
+fabric-ecommerce-lakehouse/
+│
+├── notebooks/
+│   ├── 01_bronze_ingest.ipynb          # Reads Excel files from /Files/Current and writes Bronze Delta tables
+│   ├── 02_silver_transform.ipynb       # Cleanses, derives Order_Year/Month, removes duplicates
+│   ├── 03_gold_model.ipynb             # Creates Gold fact and dimension tables with MERGE logic
+│   ├── 04_powerbi_semantic_model.ipynb # Optional – builds Power BI relationships & model
+│
+├── sql/
+│   ├── create_gold_tables.sql          # SQL DDL scripts for all Gold tables
+│   ├── merge_patterns.sql              # MERGE queries for incremental updates
+│
+├── images/
+│   ├── partition_fabric.png            # Bronze layer partitioning view
+│   ├── semantic_model_fabric.png       # Gold star schema model
+│   ├── lakehouse_view.png              # Fabric Lakehouse view
+│   └── pb_insight.png                  # Power BI visual insight
+│
+├── pipelines/
+│   └── data_pipeline_sample.json       # (Optional) Fabric pipeline JSON for automated ingestion
+│
+├── docs/
+│   └── architecture.md                 # Notes on Medallion architecture & design decisions
+│
+├── samples/
+│   └── Sales_01012023.xlsx             # Sample Excel file used for testing ingestion
+│
+├── README.md
+├── LICENSE
+└── .gitignore
+
