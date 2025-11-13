@@ -34,29 +34,29 @@ Star schema + semantic relationships; MERGE-based upserts for dimensions, append
 fabric-ecommerce-lakehouse/
 │
 ├── notebooks/
-│   ├── 01_bronze_ingest.ipynb          # Reads Excel files from /Files/Current and writes Bronze Delta tables
-│   ├── 02_silver_transform.ipynb       # Cleanses, derives Order_Year/Month, removes duplicates
-│   ├── 03_gold_model.ipynb             # Creates Gold fact and dimension tables with MERGE logic
-│   ├── 04_powerbi_semantic_model.ipynb # Optional – builds Power BI relationships & model
+│   ├── 01_bronze_ingest.ipynb              # Ingest Excel from /Files/Current → Bronze Delta
+│   ├── 02_silver_transform.ipynb           # Cleansing, derives Year/Month, removes duplicates
+│   ├── 03_gold_model.ipynb                 # Builds Gold fact & dimension tables with MERGE
+│   └── 04_powerbi_semantic_model.ipynb     # Optional – Power BI relationships & semantic model
 │
 ├── sql/
-│   ├── create_gold_tables.sql          # SQL DDL scripts for all Gold tables
-│   ├── merge_patterns.sql              # MERGE queries for incremental updates
+│   ├── create_gold_tables.sql              # DDL scripts for all Gold tables
+│   └── merge_patterns.sql                  # Reusable MERGE patterns for incremental loads
 │
 ├── images/
-│   ├── partition_fabric.png            # Bronze layer partitioning view
-│   ├── semantic_model_fabric.png       # Gold star schema model
-│   ├── lakehouse_view.png              # Fabric Lakehouse view
-│   └── pb_insight.png                  # Power BI visual insight
+│   ├── partition_fabric.png                # Bronze partition folder structure
+│   ├── semantic_model_fabric.png           # Gold star schema model
+│   ├── lakehouse_view.png                  # Fabric Lakehouse table view
+│   └── pb_insight.png                      # Sample Power BI insight screenshot
 │
 ├── pipelines/
-│   └── data_pipeline_sample.json       # (Optional) Fabric pipeline JSON for automated ingestion
+│   └── data_pipeline_sample.json           # (Optional) Fabric pipeline config for automation
 │
 ├── docs/
-│   └── architecture.md                 # Notes on Medallion architecture & design decisions
+│   └── architecture.md                     # Notes on Medallion architecture & design decisions
 │
 ├── samples/
-│   └── Sales_01012023.xlsx             # Sample Excel file used for testing ingestion
+│   └── Sales_01012023.xlsx                 # Sample Excel file for ingestion demo
 │
 ├── README.md
 ├── LICENSE
