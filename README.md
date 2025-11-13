@@ -31,7 +31,6 @@ Star schema + semantic relationships; MERGE-based upserts for dimensions, append
 - **Power BI** (Semantic model + report)
 
 ## 📂 Project Structure
-'''
 fabric-ecommerce-lakehouse/
 │
 ├── notebooks/
@@ -61,5 +60,6 @@ fabric-ecommerce-lakehouse/
 │
 ├── README.md
 ├── LICENSE
-└── .gitignore'''
+└── .gitignore
+
 
