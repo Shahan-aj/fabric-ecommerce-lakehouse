@@ -31,6 +31,8 @@ Star schema + semantic relationships; MERGE-based upserts for dimensions, append
 - **Power BI** (Semantic model + report)
 
 ## 📂 Project Structure
+
+```plaintext
 fabric-ecommerce-lakehouse/
 │
 ├── notebooks/
@@ -40,26 +42,29 @@ fabric-ecommerce-lakehouse/
 │   └── 04_powerbi_semantic_model.ipynb     # Optional – Power BI relationships & semantic model
 │
 ├── sql/
-│   ├── create_gold_tables.sql              # DDL scripts for all Gold tables
-│   └── merge_patterns.sql                  # Reusable MERGE patterns for incremental loads
+│   ├── create_gold_tables.sql              # DDL scripts for Gold tables
+│   └── merge_patterns.sql                  # Reusable MERGE patterns
 │
 ├── images/
 │   ├── partition_fabric.png                # Bronze partition folder structure
-│   ├── semantic_model_fabric.png           # Gold star schema model
-│   ├── lakehouse_view.png                  # Fabric Lakehouse table view
-│   └── pb_insight.png                      # Sample Power BI insight screenshot
+│   ├── semantic_model_fabric.png           # Star schema model
+│   ├── lakehouse_view.png                  # Lakehouse UI view
+│   └── pb_insight.png                      # Power BI insight screenshot
 │
 ├── pipelines/
-│   └── data_pipeline_sample.json           # (Optional) Fabric pipeline config for automation
+│   └── data_pipeline_sample.json           # Optional pipeline config
 │
 ├── docs/
-│   └── architecture.md                     # Notes on Medallion architecture & design decisions
+│   └── architecture.md                     # Notes on Medallion architecture
 │
 ├── samples/
-│   └── Sales_01012023.xlsx                 # Sample Excel file for ingestion demo
+│   └── Sales_01012023.xlsx                 # Sample Excel for ingestion
 │
 ├── README.md
 ├── LICENSE
 └── .gitignore
+```
+
+
 
 
